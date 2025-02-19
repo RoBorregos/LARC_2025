@@ -14,12 +14,6 @@ class FieldColor:
     color_range: tuple[tuple[int, int, int], tuple[int, int, int]]
     name: str
 
-    def __post_init__(self):
-        self.color_range = (
-            (max(0, self.color[0] - 10), max(0, self.color[1] - 10), max(0, self.color[2] - 10)),
-            (min(255, self.color[0] + 10), min(255, self.color[1] + 10), min(255, self.color[2] + 10))
-        )
-
     def is_color_in_range(self, color: tuple[int, int, int]) -> bool:
         """
         Checks if the color is in the range of the color of the field
