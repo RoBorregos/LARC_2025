@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 
-
 def detect_color(detection_size:int, frame:np.ndarray, debug:bool = True):
     """
     Detects the average color of the detection_size * detection_size square in the center of the frame
