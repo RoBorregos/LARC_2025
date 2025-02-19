@@ -7,6 +7,7 @@ def detect_color(detection_size:int, frame:np.ndarray, debug:bool = True):
 
     Returns the average color of the square in RGB format
     """
+    center = (frame.shape[1] // 2, frame.shape[0] // 2)
     rect = cv2.rectangle(frame, (center[0] - detection_size // 2, center[1] - detection_size // 2), (center[0] + detection_size // 2, center[1] + detection_size // 2), (0, 0, 255), 2)
 
     square = frame[center[1] - detection_size // 2:center[1] + detection_size // 2, center[0] - detection_size // 2:center[0] + detection_size // 2]
@@ -23,15 +24,3 @@ def detect_color(detection_size:int, frame:np.ndarray, debug:bool = True):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             return average_color
     return average_color
-
-while True:
-    cap = cv2.VideoCapture(0)
-    ret, frame = cap.read()
-    
-    center = (frame.shape[1] // 2, frame.shape[0] // 2)
-    
-    average_color = detect_color(100, frame)
-    print(average_color)
-
-cap.release()
-cv2.destroyAllWindows()
