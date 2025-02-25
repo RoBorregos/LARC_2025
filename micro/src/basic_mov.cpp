@@ -1,6 +1,5 @@
 #include <Arduino.h>
 
-// Define motor pins
 const int M1_1 = 2;
 const int M1_2 = 3;
 const int M2_1 = 4;
@@ -12,7 +11,7 @@ const int M4_2 = 9;
 
 void setup() {
 
-    pinMode(M1_!, OUTPUT);
+    pinMode(M1_1, OUTPUT);
     pinMode(M1_2, OUTPUT);
     pinMode(M2_1, OUTPUT);
     pinMode(M2_2, OUTPUT);
